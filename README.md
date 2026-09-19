@@ -10,10 +10,10 @@ O projeto possui testes automatizados para os principais fluxos da aplicação, 
 
 Automatizar testes funcionais da aplicação EBAC Store, contemplando os seguintes fluxos:
 
-* Login
-* Produtos
-* Busca de produtos
-* Checkout
+- Login
+- Produtos
+- Busca de produtos
+- Checkout
 
 O projeto também possui configuração para execução da aplicação iOS na Sauce Labs.
 
@@ -21,16 +21,16 @@ O projeto também possui configuração para execução da aplicação iOS na Sa
 
 ## 🛠️ Tecnologias utilizadas
 
-* Node.js
-* JavaScript
-* WebdriverIO
-* Appium
-* Mocha
-* Allure Report
-* Android Emulator
-* iOS / XCUITest
-* Sauce Labs
-* Git e GitHub
+- Node.js
+- JavaScript
+- WebdriverIO
+- Appium
+- Mocha
+- Allure Report
+- Android Emulator
+- iOS / XCUITest
+- Sauce Labs
+- Git e GitHub
 
 ---
 
@@ -84,13 +84,13 @@ ebac-store-mobile-tests/
 
 Antes de executar os testes, é necessário ter instalado:
 
-* Node.js
-* npm
-* Java/JDK
-* Android Studio, caso utilize execução local Android
-* Android Emulator, caso utilize execução local Android
-* Appium, conforme configuração do ambiente
-* Conta Sauce Labs, caso utilize execução remota
+- Node.js
+- npm
+- Java/JDK
+- Android Studio, caso utilize execução local Android
+- Android Emulator, caso utilize execução local Android
+- Appium, conforme configuração do ambiente
+- Conta Sauce Labs, caso utilize execução remota
 
 Verifique o Node.js:
 
@@ -284,19 +284,19 @@ test/pageobjects/
 
 Principais Page Objects:
 
-* `login.page.js`
-* `home.page.js`
-* `browse.page.js`
-* `product.page.js`
-* `profile.page.js`
+- `login.page.js`
+- `home.page.js`
+- `browse.page.js`
+- `product.page.js`
+- `profile.page.js`
 
 Essa organização facilita:
 
-* manutenção dos testes;
-* reutilização de elementos;
-* redução de duplicidade;
-* legibilidade;
-* evolução da automação.
+- manutenção dos testes;
+- reutilização de elementos;
+- redução de duplicidade;
+- legibilidade;
+- evolução da automação.
 
 ---
 
@@ -398,20 +398,20 @@ A implementação do fluxo iOS foi integrada à branch principal por meio de mer
 
 ### Implementação
 
-* [x] Configuração WebdriverIO
-* [x] Configuração Appium
-* [x] Page Object Model
-* [x] Testes de Login
-* [x] Testes de Produtos
-* [x] Testes de Busca
-* [x] Testes de Checkout
-* [x] Configuração Android
-* [x] Configuração iOS
-* [x] Integração com Sauce Labs
-* [x] Aplicação iOS (`LojaEBAC.ipa`)
-* [x] Estrutura de suítes
-* [x] Configuração de relatórios
-* [x] Versionamento com Git
+- [x] Configuração WebdriverIO
+- [x] Configuração Appium
+- [x] Page Object Model
+- [x] Testes de Login
+- [x] Testes de Produtos
+- [x] Testes de Busca
+- [x] Testes de Checkout
+- [x] Configuração Android
+- [x] Configuração iOS
+- [x] Integração com Sauce Labs
+- [x] Aplicação iOS (`LojaEBAC.ipa`)
+- [x] Estrutura de suítes
+- [x] Configuração de relatórios
+- [x] Versionamento com Git
 
 ### Execução iOS na Sauce Labs
 
