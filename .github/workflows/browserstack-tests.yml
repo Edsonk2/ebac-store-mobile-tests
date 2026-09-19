@@ -23,6 +23,19 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+      - name: Validar credenciais BrowserStack
+        env:
+          BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
+          BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
+            "https://api-cloud.browserstack.com/app-automate/recent_apps?limit=1")
+          echo "HTTP Status: $STATUS"
+          if [ "$STATUS" != "200" ]; then
+            exit 1
+          fi
+
       - name: Executar testes no BrowserStack
         env:
           BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
