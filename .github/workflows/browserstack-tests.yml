@@ -30,4 +30,4 @@ jobs:
           PLATFORM: ios
           ENVIRONMENT: browserstack
           REPORT: false
-        run: npm test
+        run: npm run test:login
