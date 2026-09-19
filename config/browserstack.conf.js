@@ -4,9 +4,10 @@ export const browserstackConf = {
   user: process.env.BROWSERSTACK_USERNAME,
   key: process.env.BROWSERSTACK_ACCESS_KEY,
 
+  protocol: "https",
   hostname: "hub-cloud.browserstack.com",
   port: 443,
-  baseUrl: "wd/hub",
+  path: "/wd/hub",
 
   capabilities: [
     {
