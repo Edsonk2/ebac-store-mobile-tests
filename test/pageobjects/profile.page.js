@@ -3,9 +3,25 @@ import { $, driver } from "@wdio/globals";
 class ProfilePage {
   async profileName(name) {
     if (driver.isIOS) {
-      return await $(`-ios predicate string:name == "${name}"`);
+      const element = await $(`-ios predicate string:name == "${name}"`);
+
+      await element.waitForDisplayed({
+        timeout: 20000,
+        interval: 1000,
+      });
+
+      return element;
     }
-    return await $(`//android.widget.TextView[@text="${name}"]`);
+
+    const element = await $(`//android.widget.TextView[@text="${name}"]`);
+
+    await element.waitForDisplayed({
+      timeout: 20000,
+      interval: 1000,
+    });
+
+    return element;
   }
 }
+
 export default new ProfilePage();
