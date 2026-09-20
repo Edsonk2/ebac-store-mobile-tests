@@ -11,7 +11,9 @@ class LoginPage {
     }
 
     if (driver.isIOS) {
-      return $('-ios predicate string:name == "Password"');
+      return $(
+        '-ios predicate string:type == "XCUIElementTypeSecureTextField"',
+      );
     }
   }
 
