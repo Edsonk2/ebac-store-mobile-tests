@@ -3,7 +3,9 @@ import { $, driver } from "@wdio/globals";
 class ProfilePage {
   async profileName(name) {
     if (driver.isIOS) {
-      const element = await $(`-ios predicate string:name == "${name}"`);
+      const element = await $(
+        `-ios predicate string:label == "${name}" OR name == "${name}" OR value == "${name}"`,
+      );
 
       await element.waitForDisplayed({
         timeout: 20000,
