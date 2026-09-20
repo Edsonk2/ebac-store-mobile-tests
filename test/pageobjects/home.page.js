@@ -1,21 +1,33 @@
 import { $, driver } from "@wdio/globals";
 
 class HomePage {
-  async openMenu(menu) {
-    if (driver.isIOS) {
-      const element = await $(`~tab-${menu}`);
-      await element.click();
-    } else {
-      await $(`id:tab-${menu}`).click();
-    }
-  }
+    async openMenu(menu) {
+        if (driver.isIOS) {
+            if (menu === "profile") {
+                console.log("=== TOQUE PROFILE IOS ===");
 
-  async search() {
-    const element = await $(
-      `-ios predicate string:name ENDSWITH "Search Products"`,
-    );
-    await element.click();
-  }
+                await driver.execute("mobile: tap", {
+                    x: 343,
+                    y: 786
+                });
+
+                return;
+            }
+
+            const element = await $(`~tab-${menu}`);
+            await element.click();
+            return;
+        }
+
+        await $(`id:tab-${menu}`).click();
+    }
+
+    async search() {
+        const element = await $(
+            `-ios predicate string:name ENDSWITH "Search Products"`
+        );
+        await element.click();
+    }
 }
 
 export default new HomePage();
